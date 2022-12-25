@@ -1,0 +1,48 @@
+@url = http://localhost:3000/api
+@contentype = application/json
+
+### create a channel 
+POST {{url}}/channel
+Content-Type: {{contentype}}
+
+{
+  "name":"channe811"
+}
+
+### get all channels
+GET {{url}}/channel HTTP/1.1
+
+### get one channel by id
+GET {{url}}/channel/3    HTTP/1.1
+
+###  update one channel by id
+PATCH {{url}}/channel/2  HTTP/1.1
+Content-Type: {{contentype}}
+
+{
+  "name":"channel11"
+}
+
+### delete on channel by id
+
+DELETE {{url}}/channel/2 HTTP/1.1
+
+
+### create a message 
+POST {{url}}/message
+Content-Type: {{contentype}}
+
+{
+  "title":"m10",
+  "content":"m10",
+  "channel":3
+}
+
+### get many message by channel
+Get {{url}}/message?channel=1&pageNum=1&pageSize=2
+
+### get a message by message id
+GET {{url}}/message/1 HTTP/1.1
+
+### delete a message by message id
+DELETE {{url}}/message/1 HTTP/1.1
